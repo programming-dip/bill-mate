@@ -6,10 +6,13 @@ const router = createBrowserRouter([
     {
         path: "/",
         Component: HomeLayOut,
-        children: [{
-            path: "/",
-            Component: Home
-        }],
+        children: [
+            {
+                path: "/",
+                Component: Home,
+                loader: () => fetch("/learningData.json")
+            }
+        ],
     },
 ]);
 

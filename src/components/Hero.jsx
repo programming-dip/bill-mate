@@ -1,6 +1,7 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import React from 'react';
 import { Link } from 'react-router';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
     return (
@@ -15,9 +16,8 @@ const Hero = () => {
                     />
                     <div>
                         <div>
-                            <h1 className="text-5xl font-bold">Your <span className='text-black'>money.</span></h1>
-                            <h1 className="text-5xl font-bold">Your <span className='text-black'>bills.</span></h1>
-                            <h1 className="text-5xl font-bold">Your <span className='text-black'>way.</span></h1>
+                            <h1 className="text-5xl w-96 dm-sans-bold">Your <span className='text-black'><Typewriter words={['money.','bills.','way.']} loop={0}></Typewriter></span></h1>
+                            
 
                             <p className="py-6 max-w-60 text-black">
                                 Simplify your finances and take

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Authentication",
+    "description": "Securely sign in users with email/password, Google, Facebook, and other OAuth providers with just a few lines of code.",
+    "image": "https://img.icons8.com/color/200/firebase.png",
+    "alt": "Firebase Authentication"
+  },
+  {
+    "id": 2,
+    "title": "Firestore Database",
+    "description": "Store and sync app data in real-time using a flexible, scalable NoSQL cloud database built for modern apps.",
+    "image": "https://img.icons8.com/color/200/google-cloud.png",
+    "alt": "Firebase Firestore"
+  },
+  {
+    "id": 3,
+    "title": "Realtime Database",
+    "description": "Sync data across all clients in real-time with a JSON-based database that works seamlessly offline.",
+    "image": "https://img.icons8.com/color/200/database.png",
+    "alt": "Firebase Realtime Database"
+  }
+]
