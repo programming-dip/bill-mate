@@ -16,7 +16,7 @@ const Navbar = () => {
                             <Navlinks></Navlinks>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl text-primary">BillMate</a>
+                    <Link to="/" className="text-2xl font-semibold text-primary">BillMate</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -24,8 +24,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-5">
-                    <Link className="btn btn-primary">Register</Link>
-                    <Link className="btn btn-primary">Login</Link>
+                    <Link to="/auth/register" className="btn btn-primary">Register</Link>
+                    <Link to="/auth/login" className="btn btn-primary">Login</Link>
                 </div>
             </div>
         </div>

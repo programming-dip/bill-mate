@@ -1,0 +1,3 @@
+For login page background:
+
+https://animate-ui.com/docs/components/backgrounds/bubble

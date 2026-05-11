@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "AGL",
+    "type": "Electricity & Gas",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/0/0c/AGL_Energy_logo.svg"
+  },
+  {
+    "id": 2,
+    "title": "Origin Energy",
+    "type": "Electricity & Gas",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Origin_Energy_logo.svg/1280px-Origin_Energy_logo.svg.png"
+  },
+  {
+    "id": 3,
+    "title": "Ausgrid",
+    "type": "Electricity Distributor",
+    "icon": "https://acrna.org/wp-content/uploads/2021/08/Ausgrid-Logo.png"
+  },
+  {
+    "id": 4,
+    "title": "Endeavour Energy",
+    "type": "Electricity Distributor",
+    "icon": "https://yt3.googleusercontent.com/EJyNSu97J8jQGwXzU3-e-KnSwudeIffTr0hbcIi9p-JvotwAwIo9V2bJebmIqVarE6RUgP-Ulw=s900-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "id": 5,
+    "title": "Sydney Water",
+    "type": "Water & Sewerage",
+    "icon": "https://unglobalcompact.org.au/wp-content/uploads/2022/02/Untitled-design-4-1.png"
+  },
+  {
+    "id": 6,
+    "title": "Jemena",
+    "type": "Gas Distributor",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jemena_logo.svg/1280px-Jemena_logo.svg.png"
+  },
+  {
+    "id": 7,
+    "title": "EnergyAustralia",
+    "type": "Electricity & Gas",
+    "icon": "https://play-lh.googleusercontent.com/myZOW-ePh2fbY5-aNP9wQf3iS7v6TR194XnGI2jRXVGBR1B2aiDA724EdxGa-la-xQ"
+  },
+  {
+    "id": 8,
+    "title": "Alinta Energy",
+    "type": "Electricity & Gas",
+    "icon": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5b177d1a71d7f50001c037b6/0x0.png"
+  },
+  {
+    "id": 9,
+    "title": "Telstra",
+    "type": "Internet & Phone",
+    "icon": "https://www.telstra.com.au/content/dam/tcom/lego/logo/telstra-logo-656x370.png"
+  },
+  {
+    "id": 10,
+    "title": "NBN Co",
+    "type": "Broadband Network",
+    "icon": "http://nbnco.com.au/etc.clientlibs/nbnco2/clientlibs/clientlib-base/resources/images/nbn-icon-Bright-Blue-REV-RGB.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Optus",
+    "type": "Internet & Mobile",
+    "icon": "https://maddingtoncentral.com.au/wp-content/uploads/2025/06/Optus-Logo-300x300.jpg"
+  }
+]
