@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "bill_type": "Electricity & Gas",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/0/0c/AGL_Energy_logo.svg",
+    "organization": "AGL",
+    "amount": 210,
+    "due_date": "2025-04-10T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "bill_type": "Electricity & Gas",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Origin_Energy_logo.svg/1280px-Origin_Energy_logo.svg.png",
+    "organization": "Origin Energy",
+    "amount": 185,
+    "due_date": "2025-04-15T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "bill_type": "Electricity",
+    "icon": "https://acrna.org/wp-content/uploads/2021/08/Ausgrid-Logo.png",
+    "organization": "Ausgrid",
+    "amount": 320,
+    "due_date": "2025-04-18T00:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "bill_type": "Electricity",
+    "icon": "https://yt3.googleusercontent.com/EJyNSu97J8jQGwXzU3-e-KnSwudeIffTr0hbcIi9p-JvotwAwIo9V2bJebmIqVarE6RUgP-Ulw=s900-c-k-c0x00ffffff-no-rj",
+    "organization": "Endeavour Energy",
+    "amount": 275,
+    "due_date": "2025-04-20T00:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "bill_type": "Water & Sewerage",
+    "icon": "https://unglobalcompact.org.au/wp-content/uploads/2022/02/Untitled-design-4-1.png",
+    "organization": "Sydney Water",
+    "amount": 130,
+    "due_date": "2025-04-22T00:00:00.000Z"
+  },
+  {
+    "id": 6,
+    "bill_type": "Gas",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jemena_logo.svg/1280px-Jemena_logo.svg.png",
+    "organization": "Jemena",
+    "amount": 95,
+    "due_date": "2025-04-25T00:00:00.000Z"
+  },
+  {
+    "id": 7,
+    "bill_type": "Electricity & Gas",
+    "icon": "https://play-lh.googleusercontent.com/myZOW-ePh2fbY5-aNP9wQf3iS7v6TR194XnGI2jRXVGBR1B2aiDA724EdxGa-la-xQ",
+    "organization": "EnergyAustralia",
+    "amount": 198,
+    "due_date": "2025-05-01T00:00:00.000Z"
+  },
+  {
+    "id": 8,
+    "bill_type": "Electricity & Gas",
+    "icon": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5b177d1a71d7f50001c037b6/0x0.png",
+    "organization": "Alinta Energy",
+    "amount": 172,
+    "due_date": "2025-05-05T00:00:00.000Z"
+  },
+  {
+    "id": 9,
+    "bill_type": "Internet & Phone",
+    "icon": "https://www.telstra.com.au/content/dam/tcom/lego/logo/telstra-logo-656x370.png",
+    "organization": "Telstra",
+    "amount": 89,
+    "due_date": "2025-05-08T00:00:00.000Z"
+  },
+  {
+    "id": 10,
+    "bill_type": "Broadband",
+    "icon": "http://nbnco.com.au/etc.clientlibs/nbnco2/clientlibs/clientlib-base/resources/images/nbn-icon-Bright-Blue-REV-RGB.jpg",
+    "organization": "NBN Co",
+    "amount": 75,
+    "due_date": "2025-05-10T00:00:00.000Z"
+  },
+  {
+    "id": 11,
+    "bill_type": "Internet & Mobile",
+    "icon": "https://maddingtoncentral.com.au/wp-content/uploads/2025/06/Optus-Logo-300x300.jpg",
+    "organization": "Optus",
+    "amount": 65,
+    "due_date": "2025-05-12T00:00:00.000Z"
+  }
+]

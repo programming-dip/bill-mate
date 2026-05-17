@@ -1,13 +1,31 @@
-import React from 'react';
-import { Link } from 'react-router';
+import { AuthContext } from '@/contexts/AuthContext';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router';
 
 const Login = () => {
-    const handleLogin = (e)=>{
+    const { signInUser } = useContext(AuthContext);
+    const urlObj = useLocation();
+    const prevPath = urlObj.state;
+    const redirect = useNavigate();
+
+    const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        console.log(email, password);
+        signInUser(email, password)
+            .then((userCredential) => {
+                // Signed in 
+                // const user = userCredential.user;
+                // ...
+                prevPath? redirect(prevPath) : redirect("/");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode);
+            });
+
     }
     return (
         <div>

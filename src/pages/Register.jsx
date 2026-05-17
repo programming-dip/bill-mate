@@ -1,17 +1,46 @@
-import React from 'react';
+import { AuthContext } from '@/contexts/AuthContext';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
 
 const Register = () => {
+    const { signUpUser, setNameAndPhoto } = useContext(AuthContext);
+
     const handleRegister = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
         const photo = e.target.photo.value;
         const password = e.target.password.value;
+
+        if(!name || !email || !password) {
+            return alert("Please fill all filed to continue");
+        }
+
+
+        signUpUser(email, password)
+            .then((userCredential) => {
+                // Signed up 
+                // const user = userCredential.user;
+                setNameAndPhoto(name, photo)
+                    .then(() => {
+                        // Profile updated!
+                        // ...
+                    }).catch((error) => {
+                        // An error occurred
+                        console.log(error);
+                    });
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorCode);
+            });
+
     }
     return (
         <div>
-            <div className="hero bg-black py-50">
+            <div className="hero bg-black pt-50">
 
                 <div className="card text-neutral-content w-lg px-10 shrink-0 shadow-2xl">
                     <p className='text-2xl px-35'>Register</p>
