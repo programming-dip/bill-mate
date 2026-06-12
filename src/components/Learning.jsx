@@ -3,7 +3,7 @@ import LearningCard from './LearningCard';
 import { useLoaderData } from 'react-router';
 const Learning = () => {
     const learningData = useLoaderData();
-    console.log(learningData);
+    // console.log(learningData);
     return (
         <div
             className="bg-cover bg-center bg-repeat-space min-h-screen"

@@ -2,6 +2,8 @@ import { Link } from "react-router";
 import Navlinks from "../utils/Navlinks";
 import { useContext } from "react";
 import { AuthContext } from "@/contexts/AuthContext";
+import ProfileDropdown from "./ProfileDropdown";
+import PrivateRoute from "@/provider/PrivateRoute";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
@@ -37,7 +39,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end space-x-5">
                     {
-                        user ? <button onClick={handleLogOut} className="btn btn-primary">Logout</button>
+                        user ? <PrivateRoute><ProfileDropdown></ProfileDropdown></PrivateRoute>
                             :
                             <>
                                 <Link to="/auth/register" className="btn btn-primary">Register</Link>

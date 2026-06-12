@@ -8,6 +8,9 @@ import PrivateRoute from '@/provider/PrivateRoute';
 import Bills from '@/pages/Bills';
 import Profile from '@/pages/Profile';
 import BillDetails from '@/pages/BillDetails';
+import { path } from 'framer-motion/client';
+import Loading from '@/components/Loading';
+import ForgotPassword from '@/pages/ForgotPassword';
 
 const router = createBrowserRouter([
     {
@@ -17,7 +20,9 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 Component: Home,
-                loader: () => fetch("/learningData.json")
+                loader: () => fetch("/learningData.json"),
+                hydrateFallbackElement: <Loading></Loading>
+                
             },
             {
                 path: "/bills",
@@ -51,8 +56,17 @@ const router = createBrowserRouter([
             {
                 path: "/auth/register",
                 Component: Register
+            },
+            {
+                path: "/auth/forgot-register",
+                Component: ForgotPassword
             }
         ]
+    },
+
+    {
+        path: "/loading",
+        Component: Loading
     }
 ]);
 

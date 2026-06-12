@@ -1,9 +1,13 @@
 import { AuthContext } from '@/contexts/AuthContext';
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
+import Swal from 'sweetalert2';
 
 const Register = () => {
-    const { signUpUser, setNameAndPhoto } = useContext(AuthContext);
+    const { signUpUser, setNameAndPhoto, setLoading } = useContext(AuthContext);
+    const urlObj = useLocation();
+    const prevPath = urlObj.state;
+    const redirect = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -12,8 +16,17 @@ const Register = () => {
         const photo = e.target.photo.value;
         const password = e.target.password.value;
 
-        if(!name || !email || !password) {
-            return alert("Please fill all filed to continue");
+        if (!name || !email || !password) {
+
+            Swal.fire({
+                title: "Please fill all filed to continue!",
+                icon: "warning",
+                theme: 'auto',
+                draggable: false
+            });
+
+            return;
+
         }
 
 
@@ -25,16 +38,54 @@ const Register = () => {
                     .then(() => {
                         // Profile updated!
                         // ...
+                        Swal.fire({
+                            title: `Welcome ${name}!`,
+                            icon: "success",
+                            theme: 'auto',
+                            draggable: false
+                        });
+
+                        prevPath ? redirect(prevPath) : redirect("/");
                     }).catch((error) => {
                         // An error occurred
+                        Swal.fire({
+                            title: "Unexpected error happened! Try again.",
+                            icon: "error",
+                            theme: 'auto',
+                            draggable: false
+                        });
                         console.log(error);
+                        setLoading(false);
                     });
                 // ...
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                alert(errorCode);
+                if (errorCode === 'auth/email-already-in-use') {
+                    Swal.fire({
+                        title: `${email} is already in use with another account!`,
+                        icon: "warning",
+                        theme: 'auto',
+                        draggable: false
+                    });
+                } else if (errorCode === 'auth/invalid-email') {
+                    Swal.fire({
+                        title: `${email} is not a valid email!`,
+                        icon: "warning",
+                        theme: 'auto',
+                        draggable: false
+                    });
+                } else if (errorCode === 'auth/weak-password') {
+                    Swal.fire({
+                        title: `Weak password!`,
+                        icon: "warning",
+                        theme: 'auto',
+                        draggable: false
+                    });
+                }
+
+                setLoading(false);
             });
 
     }

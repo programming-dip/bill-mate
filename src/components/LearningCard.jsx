@@ -2,7 +2,7 @@ import React from 'react';
 
 const LearningCard = ({ data }) => {
     const {title, description, image, alt} = data;
-    console.log(data);
+    // console.log(data);
     return (
         <div>
             <div className="card bg-accent w-96 h-96 shadow-sm mx-auto">

@@ -1,22 +1,33 @@
+import Loading from '@/components/Loading';
+import { PaymentContext } from '@/contexts/PaymentContext';
 import TypeIcon from '@/utils/TypeIcon';
 import { log } from 'firebase/firestore/pipelines';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 
 const BillDetails = () => {
     const urlID = parseInt(useParams().id);
     const [billData, setBillData] = useState({});
-    useEffect(()=>{
-        fetch("/bills.json")
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            const targetedData = data.find(singleData=>singleData.id === urlID);
-            setBillData(targetedData);
-        })
-    },[urlID])
+    const [loading, setLoading] = useState(true);
 
-    console.log(billData);
+    const { payBill } = useContext(PaymentContext);
+
+    const managePayNow = (id, amount) => {
+        payBill(id, amount);
+    }
+
+    useEffect(() => {
+        fetch("/bills.json")
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                const targetedData = data.find(singleData => singleData.id === urlID);
+                setBillData(targetedData);
+                setLoading(false);
+            })
+    }, [urlID])
+
+    if (loading) { return <Loading></Loading> }
 
     return (
         <div className='max-w-[95%] mx-auto min-h-[90vh]'>
@@ -32,8 +43,8 @@ const BillDetails = () => {
                 <figure className='max-w-30 lg:max-w-54 lg:max-h-70'>
                     <img
                         src={billData.icon}
-                        alt={`${billData. organization}-logo`} 
-                        className='object-contain lg:max-h-50'/>
+                        alt={`${billData.organization}-logo`}
+                        className='object-contain lg:max-h-50' />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl">{billData.organization}</h2>
@@ -45,7 +56,7 @@ const BillDetails = () => {
 
                     <div className='flex lg:max-w-200 lg:px-20 mt-10 items-center space-x-2'>
                         <p className='text-lg'>Amount</p>
-                        <p className='text-xl font-bold'>$320.00</p>
+                        <p className='text-xl font-bold'>${billData.amount}</p>
                     </div>
                     <div className='flex lg:max-w-200 lg:px-20 items-center'>
                         <p className='text-lg'>Due Date</p>
@@ -55,11 +66,11 @@ const BillDetails = () => {
                         <p className='text-lg'>Reference</p>
                         <p>#BILL-000{billData.id}</p>
                     </div>
-                    
+
 
 
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Pay Now</button>
+                        <button className="btn btn-primary" onClick={() => managePayNow(billData.id, billData.amount)}>Pay Now</button>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import ServiceCard from './ServiceCard';
+import Loading from './Loading';
 
 
 const SupportedServices = () => {
@@ -23,12 +24,10 @@ const SupportedServices = () => {
             })
     }, [])
 
-    console.log(servicesData);
+    // console.log(servicesData);
 
     if (loading) {
-        return (<>
-            <p>Loading</p>
-        </>)
+        return (<Loading></Loading>);
     }
 
     return (
@@ -67,81 +66,7 @@ const SupportedServices = () => {
 
         </div>
     );
-
-    // return (
-    //     <div className='py-20 bg-accent'>
-    //         <div className='pb-10'>
-    //             <p className='text-center dm-sans-semibold text-5xl text-black'>
-    //                 Connected <span className='text-primary'>Providers</span>
-    //             </p>
-    //         </div>
-
-    //         {/* wrapper div handles centering */}
-    //         <div className="w-full flex justify-center px-4">
-    //             <div className="w-full max-w-md mx-auto">
-    //                 <Swiper
-    //                     grabCursor={true}
-    //                     centeredSlides={true}
-    //                     slidesPerView={1}
-    //                     spaceBetween={30}
-    //                     autoplay={{ delay: 2500, disableOnInteraction: false }}
-    //                     navigation={true}
-    //                     pagination={{ clickable: true }}
-    //                     modules={[Autoplay, Pagination, Navigation]}
-    //                     className='h-120'
-    //                 >
-    //                     {servicesData.map(serviceData => (
-    //                         <SwiperSlide key={serviceData.id}>
-    //                             <ServiceCard serviceData={serviceData} />
-    //                         </SwiperSlide>
-    //                     ))}
-    //                 </Swiper>
-    //             </div>
-    //         </div>
-
-    //     </div>
-    // );
-
-    //     <div className='py-20 bg-accent'>
-    //         <div className='pb-10'>
-    //             <p className='text-center dm-sans-semibold text-5xl text-black'>Connected <span className='text-primary'>Providers</span></p>
-    //         </div>
-    //         <Swiper
-    //             // effect={'coverflow'}
-    //             grabCursor={true}
-    //             centeredSlides={true}
-    //             slidesPerView={1}
-    //             spaceBetween={30}
-    //             // coverflowEffect={{
-    //             //     rotate: 50,
-    //             //     stretch: 0,
-    //             //     depth: 100,
-    //             //     modifier: 1,
-    //             //     slideShadows: false,
-    //             // }}
-    //             autoplay={{
-    //                 delay: 2500,
-    //                 disableOnInteraction: false,
-    //             }}
-    //             navigation={true}
-    //             pagination={{
-    //                 clickable: true,
-    //             }}
-    //             modules={[Autoplay, EffectCoverflow, Pagination, Navigation]}
-    //             className="flex justify-center min-h-120 max-w-6/12"
-
-    //         >
-    //             <div className='w-6/12 mx-auto'>
-    //                 {
-    //                     servicesData.map(serviceData => <SwiperSlide>
-    //                         {/* <img src={serviceData.icon} /> */}
-    //                         <ServiceCard></ServiceCard>
-    //                     </SwiperSlide>)
-    //                 }
-    //             </div>
-    //         </Swiper>
-    //     </div>
-    // );
+    
 };
 
 export default SupportedServices;

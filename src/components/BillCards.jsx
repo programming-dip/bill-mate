@@ -1,12 +1,17 @@
 import TypeIcon from '@/utils/TypeIcon';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
+import { FaCheck } from "react-icons/fa";
+import { AuthContext } from '@/contexts/AuthContext';
 
 const BillCards = ({ billData }) => {
     const { id, bill_type, icon, organization, amount, due_date } = billData;
     const date = new Date(due_date);
+    const { user } = useContext(AuthContext);
+    const userPrefix = user.uid;
+    const paidBills = localStorage.getItem(`${userPrefix}-paidBillsId`);
 
-    console.log(billData);
+    // console.log("Paid Bills: ", paidBills);
 
 
     return (
@@ -28,7 +33,11 @@ const BillCards = ({ billData }) => {
                 <p>Due Date: {date.toLocaleString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' })}</p>
 
                 <div className="card-actions pl-10">
-                    <Link to={`/bill-details/${id}`} className="btn btn-primary">See Details</Link>
+
+                    {paidBills?.includes(id) ? <button className="btn btn-primary btn-outline disabled">Bill Paid <FaCheck /></button>
+                        : <Link to={`/bill-details/${id}`} className="btn btn-primary">See Details</Link>
+                    }
+
                 </div>
 
             </div>
