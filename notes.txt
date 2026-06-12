@@ -1,3 +1,56 @@
 For login page background:
 
 https://animate-ui.com/docs/components/backgrounds/bubble
+
+This is a Bill Management website that allows users to pay utility bills.  Users can see the list of bills, such as electricity, gas, water, internet, etc. Those bills can be paid using their balance. 
+I have added 
+A Navbar,
+A Slider / Carousel (using SwiperJS or any library except DaisyUI Carousel),
+A Footer.
+Except the Home page, Login and Register page, all the other pages will be protected. That means, don’t allow visiting those pages without signing / logging in.
+
+For Navbar
+Conditionally render Login / Register if user is NOT signed in, and show User Profile picture if Signed In instead of Login / Register buttons.
+Clicking the User Profile button will appear a dropdown menu, showing these  
+Users current balance.
+Log Out menu (Clicking this will Log out the user)
+
+Authentication
+If the user logs in successfully then 
+navigate him to his desired Route / Home page.
+If not, show him an error with a toast/error message anywhere in the form.
+
+There will be some other options like 
+Show the user a Link for Register so that he can go to the register page. 
+Show users a Social Login Button ( Google only ) on clicking it 
+user authenticates with Google
+ Navigate him to his desired Route / Home page.
+
+
+If the user registers successfully then 
+navigate him to his desired Route / Home page.
+If not, show him an error with a toast/error message anywhere in the form.
+
+ My Profile 
+
+ This page will contain the User profile picture, Display Name and email. 
+
+ There will be an update feature for name & photo. define this requirement in the challenge section. 
+
+Bills page
+This page will contain various bills such as - Electricity, Gas, Internet, Water, Credit Card Bill, Tuition / School / College Monthly Fee, etc.
+
+Bill Details Page
+
+In this page, users would pay a single / particular bill using the balance amount shown in the Navbar menu. This page will be a Two Column layout. Left column will contain the Large Icon of the organization logo. Then at the bottom right corner, the bill_type icon will show. Right column will show the other fields such as Organization Name, Bill type, Amount, Due Date, And “Pay Bill” button.  
+
+
+Some other Features:
+After successful payment, the user will be redirected to the Bills page, and at the paid bill, there would be a added a green tick ✅ icon indicating that, the bill was paid successfully.
+If a user visit a protected route without logging in / Sign in, Redirect the user to the Login Page, After successful Login the user must return the the protected route
+Don’t allow paying the same bill twice.
+There would be a drop-down menu in the Bills Page where the bill-type can be selected, and then bills will be filtered according to the bill-type.
+Update Information Feature
+In my-profile route, there will be an update button on Clicking it.  Take the user to another route 
+Show the user a form with 2 input fields ( photo-URL  and Name ) 
+An Update Information button.
