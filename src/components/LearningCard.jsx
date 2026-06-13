@@ -5,7 +5,7 @@ const LearningCard = ({ data }) => {
     // console.log(data);
     return (
         <div>
-            <div className="card bg-accent w-96 h-96 shadow-sm mx-auto">
+            <div className="card bg-accent w-full max-w-sm h-96 shadow-sm mx-auto">
                 <h2 className="pt-2 text-center text-2xl inter-regular font-medium">{title}</h2>
                 <figure className="px-10 pt-10">
                     <img

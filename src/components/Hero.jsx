@@ -12,11 +12,11 @@ const Hero = () => {
                         src="/hero.lottie"
                         loop
                         autoplay
-                        className="max-w-2xl md:w-2xl -mx-15"
+                        className="w-full max-w-sm lg:max-w-2xl mx-auto"
                     />
                     <div>
                         <div>
-                            <h1 className="text-5xl w-96 dm-sans-bold">Your <span className='text-black'><Typewriter words={['money.','bills.','way.']} loop={0}></Typewriter></span></h1>
+                            <h1 className="text-5xl max-w-96 lg:w-96 dm-sans-bold">Your <span className='text-black inline-block w-[160px] text-left'><Typewriter words={['money.','bills.','way.']} loop={0}></Typewriter></span></h1>
                             
 
                             <p className="py-6 max-w-60 text-black">

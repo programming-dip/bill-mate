@@ -4,7 +4,7 @@ const ServiceCard = ({serviceData}) => {
     const {title, type, icon} = serviceData;
     return (
         <div>
-            <div className="card bg-base-100 w-96 h-95 py-15 shadow-sm text-black">
+            <div className="card bg-base-100 w-full max-w-sm h-95 py-15 shadow-sm text-black">
                 <figure>
                     <img
                         src={icon}
