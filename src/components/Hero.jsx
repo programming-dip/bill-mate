@@ -24,7 +24,7 @@ const Hero = () => {
                                 action with confidence.
                             </p>
                         </div>
-                        <Link className="px-10 py-6 btn btn-primary btn-outline text-lg">Bills</Link>
+                        <Link to="/bills" className="px-10 py-6 btn btn-primary btn-outline text-lg">Bills</Link>
                     </div>
                 </div>
             </div>
